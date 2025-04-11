@@ -5,6 +5,7 @@
 struct Dado{
 
         std::string nome;
+        int idade;
 };
 
 struct No{
