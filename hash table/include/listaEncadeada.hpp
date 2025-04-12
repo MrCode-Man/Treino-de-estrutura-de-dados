@@ -15,3 +15,9 @@ struct No{
         No* proximo;
         No* anterior;
 };
+
+struct Lista{
+
+        No* comeco;
+        No* final;
+};
