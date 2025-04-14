@@ -42,13 +42,20 @@ unique_ptr<No> criaNo(unique_ptr<Lista>& lista){
         unique_ptr<Dado> novoDado = make_unique<Dado>();
 
         insereDadosNo(novoDado);
+        
+        novoNo->proximo = nullptr;
+        novoNo->dados = std::move(novoDado);
 
         if(lista->comeco == nullptr){
                 novoNo->anterior = nullptr;
-                novoNo->proximo = nullptr;
+
+                lista->comeco = novoNo.get();
+                lista->final = novoNo.get();
 
         } else {
-                // continuar depois                
+                novoNo->anterior = lista->final;
+                lista->final->proximo = std::move(novoNo);
+                lista->final = novoNo.get();
 
         }
 
