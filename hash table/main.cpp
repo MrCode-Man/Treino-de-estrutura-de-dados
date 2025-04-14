@@ -2,6 +2,7 @@
 
 #include "include/listaEncadeada.hpp"
 #include "src/funcoesLista.cpp"
+#include "include/Hashtable.hpp"
 
 using std::cout;
 using std::cin;
@@ -9,11 +10,13 @@ using std::cin;
 int main(){
 
         // inicialização
-        Dado pessoa;
-        unique_ptr<Lista> lista = criaLista();        
+        
+        array<unique_ptr<Lista>, 8> array;
+
+        Hashtable hash(array);
 
         // área de testes
-        
+
 
 
         return 0;
