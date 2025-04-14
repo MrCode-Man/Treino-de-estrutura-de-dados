@@ -1,6 +1,9 @@
 #pragma once
 
 #include <string>
+#include <memory>
+
+using std::unique_ptr;
 
 struct Dado{
 
@@ -10,9 +13,9 @@ struct Dado{
 
 struct No{
 
-        Dado* dados;
+        unique_ptr<Dado> dados;
 
-        No* proximo;
+        unique_ptr<No> proximo;
         No* anterior;
 };
 
